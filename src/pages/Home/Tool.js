@@ -14,7 +14,7 @@ const Tool = ({ tool }) => {
                     <p className='font-bold'>Available Quantity: {tool.available_quantity}</p>
                     <p className='font-bold'>Price: ${tool.price}</p>
                     <div class="card-actions justify-center mt-3">
-                        <button class="btn btn-primary btn-block">BUY NOW</button>
+                        <button class="btn btn-primary text-white btn-block">BUY NOW</button>
                     </div>
                 </div>
             </div>
