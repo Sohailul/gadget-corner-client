@@ -1,0 +1,56 @@
+[
+    {
+        "_id": 1,
+        "name": "Air circuit breaker",
+        "description": "Air circuit breaker is a circuit breaker for the purpose of protecting low voltage circuit, mainly for energizing and cutting off high current.",
+        "img": "https://live.staticflickr.com/65535/52091387200_6cbe128d26_z.jpg",
+        "min_order_quantity": 55,
+        "available_quantity": 500,
+        "price": 99
+    },
+    {
+        "_id": 2,
+        "name": "Arc Fault Detection Devices",
+        "description": "An AFDD is an Arc Fault Detection Device and it is designed to detect the presence of dangerous electrical arcs and disconnect the circuit affected.",
+        "img": "https://live.staticflickr.com/65535/52089859172_748e43f237_z.jpg",
+        "min_order_quantity": 55,
+        "available_quantity": 300,
+        "price": 69
+    },
+    {
+        "_id": 3,
+        "name": "Miniature Circuit Breaker",
+        "description": "It automatically switches OFF electrical circuit during any abnormal condition in the electrical network such as overload & short circuit conditions.",
+        "img": "https://live.staticflickr.com/65535/52091392040_8d5d5a6b21_z.jpg",
+        "min_order_quantity": 55,
+        "available_quantity": 400,
+        "price": 299
+    },
+    {
+        "_id": 4,
+        "name": "Molded case circuit breakers",
+        "description": "MCCBs, are electrical protection devices used to protect the electrical circuit from excessive current",
+        "img": "https://live.staticflickr.com/65535/52090909558_c617e0b1f1_z.jpg",
+        "min_order_quantity": 55,
+        "available_quantity": 500,
+        "price": 199
+    },
+    {
+        "_id": 5,
+        "name": "Residual Current Circuit Breaker",
+        "description": "A Residual Current Circuit Breaker (RCCB) is an important safety measure when it comes to protection of electrical circuits.",
+        "img": "https://live.staticflickr.com/65535/52091391995_8b591c7a1a.jpg",
+        "min_order_quantity": 55,
+        "available_quantity": 500,
+        "price": 89
+    },
+    {
+        "_id": 6,
+        "name": "Vacuum Magnetic Contactor",
+        "description": "Conform to latest standard IEC 60470. Various types and ratings are available, rated voltage 3.6kV to 15kV",
+        "img": "https://live.staticflickr.com/65535/52091391970_284ab89d99_z.jpg",
+        "min_order_quantity": 55,
+        "available_quantity": 600,
+        "price": 79
+    }
+]

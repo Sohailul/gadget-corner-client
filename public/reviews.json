@@ -1,0 +1,20 @@
+[
+    {
+        "_id": 1,
+        "name": "Sohailul Alam",
+        "ratings": "4.5",
+        "description": "Awesome service"
+    },
+    {
+        "_id": 2,
+        "name": "Faisal Khan",
+        "ratings": "4.8",
+        "description": "Awesome Products."
+    },
+    {
+        "_id": 3,
+        "name": "Safayet Khan",
+        "ratings": "5",
+        "description": "Good Quality"
+    }
+]
