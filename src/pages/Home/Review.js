@@ -1,13 +1,13 @@
 import React from 'react';
 import Rating from 'react-rating';
-import {AiFillStar} from 'react-icons/ai';
+import { AiFillStar } from 'react-icons/ai';
 
 const Review = ({ review }) => {
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <div class="card-body text-center">
-                    <h2 class="text-2xl">{review.name}</h2>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <div className="card-body text-center">
+                    <h2 className="text-2xl">{review.name}</h2>
                     <p>{review.description}</p>
                     <div className='text-center mt-5'>
                         <Rating

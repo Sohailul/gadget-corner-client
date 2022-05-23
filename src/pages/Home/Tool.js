@@ -1,20 +1,21 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Tool = ({ tool }) => {
     return (
         <div>
-            <div class="card w-96 bg-base-100 shadow-xl">
-                <figure class="px-10 pt-10">
-                    <img src={tool.img} alt="tools" class="rounded-xl"/>
+            <div className="card w-96 bg-base-100 shadow-xl">
+                <figure className="px-10 pt-10">
+                    <img src={tool.img} alt="tools" className="rounded-xl" />
                 </figure>
-                <div class="card-body">
-                    <h2 class="card-title">{tool.name}</h2>
+                <div className="card-body">
+                    <h2 className="card-title">{tool.name}</h2>
                     <p>{tool.description}</p>
                     <p className='font-bold'>Minimum Order Quantity: {tool.min_order_quantity}</p>
                     <p className='font-bold'>Available Quantity: {tool.available_quantity}</p>
                     <p className='font-bold'>Price: ${tool.price}</p>
-                    <div class="card-actions justify-center mt-3">
-                        <button class="btn btn-primary text-white btn-block">BUY NOW</button>
+                    <div className="card-actions justify-center mt-3">
+                        <Link to={`/purchase/${tool._id}`} className="btn btn-primary text-white btn-block">BUY NOW</Link>
                     </div>
                 </div>
             </div>
