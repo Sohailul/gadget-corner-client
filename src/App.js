@@ -10,6 +10,7 @@ import NotFound from './pages/NotFound/NotFound';
 import Footer from './pages/Shared/Footer';
 import Purchase from './pages/Purchase/Purchase';
 import { ToastContainer } from 'react-toastify';
+import RequireAuth from './pages/Login/RequireAuth';
 
 
 function App() {
@@ -23,13 +24,17 @@ function App() {
           <Route path='portfolio' element={<Portfolio />}></Route>
           <Route path='login' element={<Login />}></Route>
           <Route path='signup' element={<Register />}></Route>
-          <Route path='purchase/:id' element={<Purchase />}></Route>
+          <Route path='purchase/:id' element={
+            <RequireAuth>
+              <Purchase />
+            </RequireAuth>
+          }></Route>
 
           <Route path='*' element={<NotFound />}></Route>
         </Routes>
       </div>
       <Footer />
-      <ToastContainer/>
+      <ToastContainer />
     </div>
   );
 }
