@@ -11,6 +11,14 @@ import Footer from './pages/Shared/Footer';
 import Purchase from './pages/Purchase/Purchase';
 import { ToastContainer } from 'react-toastify';
 import RequireAuth from './pages/Login/RequireAuth';
+import Dashboard from './pages/Dashboard/Dashboard';
+import MyOrders from './pages/Dashboard/MyOrders';
+import AddReview from './pages/Dashboard/AddReview';
+import MyProfile from './pages/Dashboard/MyProfile';
+import Users from './pages/Dashboard/Users';
+import AddProduct from './pages/Dashboard/AddProduct';
+import ManageProducts from './pages/Dashboard/ManageProducts';
+import ManageOrders from './pages/Dashboard/ManageOrders';
 
 
 function App() {
@@ -29,6 +37,15 @@ function App() {
               <Purchase />
             </RequireAuth>
           }></Route>
+          <Route path="dashboard" element={<RequireAuth><Dashboard /></RequireAuth>} >
+            <Route index element={<MyOrders></MyOrders>}></Route>
+            <Route path="review" element={<AddReview></AddReview>}></Route>
+            <Route path="profile" element={<MyProfile></MyProfile>}></Route>
+            <Route path="users" element={<Users></Users>}></Route>
+            <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
+            <Route path="manageorders" element={<ManageOrders></ManageOrders>}></Route>
+            <Route path="manageproducts" element={<ManageProducts></ManageProducts>}></Route>
+          </Route>
 
           <Route path='*' element={<NotFound />}></Route>
         </Routes>
