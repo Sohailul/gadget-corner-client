@@ -15,6 +15,7 @@ import Dashboard from './pages/Dashboard/Dashboard';
 import MyOrders from './pages/Dashboard/MyOrders';
 import AddReview from './pages/Dashboard/AddReview';
 import MyProfile from './pages/Dashboard/MyProfile';
+import RequireAdmin from './pages/Login/RequireAdmin';
 import Users from './pages/Dashboard/Users';
 import AddProduct from './pages/Dashboard/AddProduct';
 import ManageProducts from './pages/Dashboard/ManageProducts';
@@ -41,10 +42,10 @@ function App() {
             <Route index element={<MyOrders></MyOrders>}></Route>
             <Route path="review" element={<AddReview></AddReview>}></Route>
             <Route path="profile" element={<MyProfile></MyProfile>}></Route>
-            <Route path="users" element={<Users></Users>}></Route>
-            <Route path="addproduct" element={<AddProduct></AddProduct>}></Route>
-            <Route path="manageorders" element={<ManageOrders></ManageOrders>}></Route>
-            <Route path="manageproducts" element={<ManageProducts></ManageProducts>}></Route>
+            <Route path="users" element={<RequireAdmin><Users></Users></RequireAdmin>}></Route>
+            <Route path="addproduct" element={<RequireAdmin><AddProduct></AddProduct></RequireAdmin>}></Route>
+            <Route path="manageorders" element={<RequireAdmin><ManageOrders></ManageOrders></RequireAdmin>}></Route>
+            <Route path="manageproducts" element={<RequireAdmin><ManageProducts></ManageProducts></RequireAdmin>}></Route>
           </Route>
 
           <Route path='*' element={<NotFound />}></Route>
