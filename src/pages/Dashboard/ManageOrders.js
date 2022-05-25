@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import { BsFillTrashFill } from 'react-icons/bs';
 import auth from '../../firebase.init';
 
 const ManageOrders = () => {
@@ -15,7 +14,7 @@ const ManageOrders = () => {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
                 }
             })
-                .then(res =>res.json())
+                .then(res => res.json())
                 .then(data => setOrders(data));
         }
     }, [user])
@@ -40,8 +39,8 @@ const ManageOrders = () => {
     return (
         <div>
             <h2>My Orders: {orders.length}</h2>
-            <div class="overflow-x-auto">
-                <table class="table w-full">
+            <div className="overflow-x-auto">
+                <table className="table w-full">
                     <thead>
                         <tr>
                             <th>SL.</th>

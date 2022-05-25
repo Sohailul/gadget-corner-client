@@ -61,46 +61,46 @@ const MyProfile = () => {
     return (
         <div>
             <div className='hero-content text-center'>
-                <label for="update-modal" class="btn modal-button">Update Profile</label>
-                <input type="checkbox" id="update-modal" class="modal-toggle" />
-                <div class="modal">
-                    <div class="modal-box relative">
-                        <label for="update-modal" class="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
-                        <h3 class="text-lg font-bold">Update Profile</h3>
-                        <div class="card-body">
+                <label htmlFor="update-modal" className="btn modal-button">Update Profile</label>
+                <input type="checkbox" id="update-modal" className="modal-toggle" />
+                <div className="modal">
+                    <div className="modal-box relative">
+                        <label htmlFor="update-modal" className="btn btn-sm btn-circle absolute right-2 top-2">✕</label>
+                        <h3 className="text-lg font-bold">Update Profile</h3>
+                        <div className="card-body">
                             <form onSubmit={handleUpdateProfile}>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Name</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Name</span>
                                     </label>
-                                    <input type="text" name='name' value={user?.displayName} placeholder="Name" class="input input-bordered" />
+                                    <input disabled type="text" name='name' defaultValue={user?.displayName} placeholder="Name" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Email</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Email</span>
                                     </label>
-                                    <input type="email" name='email' value={user?.email} placeholder="Email" class="input input-bordered" />
+                                    <input disabled type="email" name='email' defaultValue={user?.email} placeholder="Email" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Address</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Address</span>
                                     </label>
-                                    <input type="text" name='address' placeholder="Address" class="input input-bordered" />
+                                    <input type="text" name='address' placeholder="Address" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">Education</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">Education</span>
                                     </label>
-                                    <input type="text" name='education' placeholder="Education" class="input input-bordered" />
+                                    <input type="text" name='education' placeholder="Education" className="input input-bordered" />
                                 </div>
-                                <div class="form-control">
-                                    <label class="label">
-                                        <span class="label-text">LinkedIn</span>
+                                <div className="form-control">
+                                    <label className="label">
+                                        <span className="label-text">LinkedIn</span>
                                     </label>
-                                    <input type="text" name='linkedin' placeholder="Your LinkedIn Profile Link" class="input input-bordered" />
+                                    <input type="text" name='linkedin' placeholder="Your LinkedIn Profile Link" className="input input-bordered" />
                                 </div>
-                                <div class="form-control mt-6">
-                                    <button class="btn btn-primary">Update</button>
+                                <div className="form-control mt-6">
+                                    <button className="btn btn-primary">Update</button>
                                 </div>
                             </form>
                         </div>
@@ -108,9 +108,9 @@ const MyProfile = () => {
                 </div>
             </div>
 
-            <div class="card w-full max-w-xs bg-base-100 shadow-xl m-auto mt-5">
-                <div class="card-body font-bold">
-                    <h2 class="text-2xl">Name: {user?.displayName}</h2>
+            <div className="card w-full max-w-xs bg-base-100 shadow-xl m-auto mt-5">
+                <div className="card-body font-bold">
+                    <h2 className="text-2xl">Name: {user?.displayName}</h2>
                     <p>Email: {user?.email}</p>
                     {
                         profile.map(p =>

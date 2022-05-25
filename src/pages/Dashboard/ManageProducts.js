@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from 'react';
-import {BsFillTrashFill} from 'react-icons/bs';
+import { BsFillTrashFill } from 'react-icons/bs';
 
 const ManageProducts = () => {
     const [tools, setTools] = useState([]);
-    useEffect(()=>{
+    useEffect(() => {
         fetch('http://localhost:5000/tool')
-        .then(res=> res.json())
-        .then(data=>setTools(data))
-    },[])
+            .then(res => res.json())
+            .then(data => setTools(data))
+    }, [])
 
     const handleDelete = id => {
         const proceed = window.confirm('Are you sure?');
@@ -29,8 +29,8 @@ const ManageProducts = () => {
     return (
         <div>
             <h2 className='text-3xl text-center mb-3 mt-5'>Manage Tools</h2>
-            
-            <table class="table w-full">
+
+            <table className="table w-full">
                 <thead>
                     <tr>
                         <th>SL.</th>
