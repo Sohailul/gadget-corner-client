@@ -31,7 +31,7 @@ const ManageOrders = () => {
                 .then(res => res.json())
                 .then(data => {
                     console.log(data);
-                    const remaining = orders.filter(item => item._id !== id)
+                    const remaining = orders.filter(order => order._id !== id)
                     setOrders(remaining);
                 })
         }
@@ -46,7 +46,7 @@ const ManageOrders = () => {
                         <tr>
                             <th>SL.</th>
                             <th>Tool Name</th>
-                            <th>Minimum Quantity</th>
+                            <th>Quantity</th>
                             <th>Price</th>
                             <th>Address</th>
                             <th>Phone</th>
@@ -63,7 +63,9 @@ const ManageOrders = () => {
                                 <td>{a.address}</td>
                                 <td>{a.phone}</td>
                                 <td>
-                                    <button onClick={() => handleDelete(a._id)}><BsFillTrashFill /></button>
+                                    {(a.price && !a.paid) && <button className='btn btn-xs'>Order Pending</button>}&nbsp;
+                                    {(a.price && a.paid) && <button className='btn btn-xs btn-success'>Delivered</button>}&nbsp;
+                                    {(a.price && !a.paid) && <button className='btn btn-xs btn-error' onClick={() => handleDelete(a._id)}>Cancel</button>}
                                 </td>
                             </tr>)
                         }

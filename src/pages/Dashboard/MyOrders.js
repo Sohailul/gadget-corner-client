@@ -31,6 +31,25 @@ const MyOrders = () => {
                 });
         }
     }, [user])
+
+    const handleDelete = id => {
+        const proceed = window.confirm('Are you sure?');
+
+        if (proceed) {
+            const url = `http://localhost:5000/order/${id}`;
+            fetch(url, {
+                method: 'DELETE'
+            })
+                .then(res => res.json())
+                .then(data => {
+                    console.log(data);
+                    const remaining = orders.filter(order => order._id !== id)
+                    setOrders(remaining);
+                })
+        }
+
+    }
+
     return (
         <div>
             <h2>My Orders: {orders.length}</h2>
@@ -40,7 +59,7 @@ const MyOrders = () => {
                         <tr>
                             <th>SL.</th>
                             <th>Tool Name</th>
-                            <th>Minimum Quantity</th>
+                            <th>Quantity</th>
                             <th>Price</th>
                             <th>Address</th>
                             <th>Phone</th>
@@ -57,13 +76,16 @@ const MyOrders = () => {
                                 <td>{a.address}</td>
                                 <td>{a.phone}</td>
                                 <td>
-                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs'>Pay</button></Link>}
+                                    {(a.price && !a.paid) && <Link to={`/dashboard/payment/${a._id}`}><button className='btn btn-xs'>Pay</button></Link>}&nbsp;
+                                    {(a.price && !a.paid) && <button className='btn btn-xs btn-error' onClick={() => handleDelete(a._id)}>Cancel</button>}
                                     {(a.price && a.paid) &&
                                         <div>
-                                            <span className="text-success text-bold">PAID</span>
-                                            <button onClick={() => navigator.clipboard.writeText(a.transactionId)}>
-                                                Copy Transaction Id
-                                            </button>
+                                            <p className="btn btn-xs btn-success text-bold">PAID</p>&nbsp;
+                                            <p className="tooltip" data-tip="Click to Copy">
+                                                <button className='btn btn-xs' onClick={() => navigator.clipboard.writeText(a.transactionId)}>
+                                                    Copy Transaction Id
+                                                </button>
+                                            </p>
                                         </div>}
                                 </td>
                             </tr>)

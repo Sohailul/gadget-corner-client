@@ -14,7 +14,7 @@ const Reviews = () => {
             <h1 className='text-4xl font-bold text-center mb-12 divider'><span className='text-primary'>All</span> Reviews</h1>
             <div className='grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-center'>
                 {
-                    reviews.slice(0,3).map(review => <Review key={review._id} review={review}></Review>)
+                    reviews.slice(0,6).reverse().map(review => <Review key={review._id} review={review}></Review>)
                 }
             </div>
         </div>

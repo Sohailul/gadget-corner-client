@@ -76,7 +76,7 @@ const Purchase = () => {
                         </div>
                         <div className="form-control">
                             <label className="label">
-                                <span className="label-text">Minimum Order Quantity</span>
+                                <span className="label-text">Quantity</span>
                             </label>
                             <input type="number" name="min_order_quantity" placeholder={`Minimum Order Quantity is ${tools.min_order_quantity}`} className="input input-bordered" required />
                         </div>

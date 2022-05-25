@@ -112,7 +112,7 @@ const CheckoutForm = ({tool}) => {
                         },
                     }}
                 />
-                <button type="submit" className='btn btn-success btn-sm mt-5' disabled={!stripe || !clientSecret}>
+                <button type="submit" className='btn btn-success btn-sm mt-5' disabled={!stripe || !clientSecret || success}>
                     Pay
                 </button>
             </form>
