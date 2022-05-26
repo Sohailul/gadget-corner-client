@@ -47,7 +47,7 @@ const Purchase = () => {
             event.target.reset();
         }
         else {
-            toast.error("Something is wrong! Check Minimum and Available Quantity Carefully.");
+            toast.error(`Something is wrong! Minimum Order quantity ${tools.min_order_quantity}  and Available Quantity in Stock ${tools.available_quantity}`);
         }
     }
 
