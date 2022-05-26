@@ -14,7 +14,7 @@ const Purchase = () => {
         fetch(`https://afternoon-journey-91609.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => setTools(data))
-    }, [])
+    }, [id])
 
     const handlePurchase = (event) => {
         event.preventDefault();
