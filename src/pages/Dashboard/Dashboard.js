@@ -1,4 +1,9 @@
 import React from 'react';
+import {CgProfile} from 'react-icons/cg';
+import {FaUsers} from 'react-icons/fa';
+import {BsCartCheckFill} from 'react-icons/bs';
+import {AiOutlineShop, AiFillShopping} from 'react-icons/ai';
+import {MdOutlineManageAccounts, MdReviews} from 'react-icons/md';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { Link, Outlet } from 'react-router-dom';
 import auth from '../../firebase.init';
@@ -15,27 +20,27 @@ const Dashboard = () => {
                     <h2 className='text-2xl font-bold text-purple-500'>Dashboard</h2>
                     <Outlet></Outlet>
                 </div>
-                <div className="drawer-side">
+                <div className="drawer-side mr-5">
                     <label htmlFor="dashboard-sidebar" className="drawer-overlay"></label>
-                    <ul className="menu p-4 overflow-y-auto w-48 bg-base-100 text-base-content">
+                    <ul className="menu p-4 overflow-y-auto w-56 bg-primary text-white rounded text-base-content">
                         {/* <!-- Sidebar content here --> */}
 
 
                         {!admin &&
                             <>
-                                <li><Link to="/dashboard/myorders">My Orders</Link></li>
-                                <li><Link to="/dashboard/review">Add a Review</Link></li>
+                                <li><Link to="/dashboard/myorders"><AiFillShopping/>My Orders</Link></li>
+                                <li><Link to="/dashboard/review"><MdReviews/>Add a Review</Link></li>
                             </>
                         }
-                        <li><Link to="/dashboard">My Profile</Link></li>
+                        <li><Link to="/dashboard"><CgProfile/>My Profile</Link></li>
                         {
                             admin &&
 
                             <>
-                                <li><Link to="/dashboard/users">Users</Link></li>
-                                <li><Link to="/dashboard/manageorders">Manage All Orders</Link></li>
-                                <li><Link to="/dashboard/addproduct">Add a Product</Link></li>
-                                <li><Link to="/dashboard/manageproducts">Manage Products</Link></li>
+                                <li><Link to="/dashboard/users"><FaUsers/>Users</Link></li>
+                                <li><Link to="/dashboard/manageorders"><BsCartCheckFill/>Manage All Orders</Link></li>
+                                <li><Link to="/dashboard/addproduct"><AiOutlineShop/>Add a Product</Link></li>
+                                <li><Link to="/dashboard/manageproducts"><MdOutlineManageAccounts/>Manage Products</Link></li>
                             </>
 
                         }

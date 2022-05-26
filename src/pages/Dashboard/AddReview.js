@@ -14,7 +14,7 @@ const AddReview = () => {
 
         const review = { name, description, ratings };
 
-        const url = `http://localhost:5000/review`;
+        const url = `https://afternoon-journey-91609.herokuapp.com/review`;
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(review),

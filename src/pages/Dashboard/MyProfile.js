@@ -12,7 +12,7 @@ const MyProfile = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/profile?email=${user.email}`, {
+            fetch(`https://afternoon-journey-91609.herokuapp.com/profile?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -43,7 +43,7 @@ const MyProfile = () => {
 
         const profile = { name, email, address, education, linkedin };
 
-        const url = `http://localhost:5000/profile`;
+        const url = `https://afternoon-journey-91609.herokuapp.com/profile`;
         fetch(url, {
             method: 'POST',
             body: JSON.stringify(profile),
@@ -108,7 +108,7 @@ const MyProfile = () => {
                 </div>
             </div>
 
-            <div className="card w-full max-w-xs bg-base-100 shadow-xl m-auto mt-5">
+            <div className="card w-full max-w-fit bg-base-100 shadow-xl m-auto mt-5">
                 <div className="card-body font-bold">
                     <h2 className="text-2xl">Name: {user?.displayName}</h2>
                     <p>Email: {user?.email}</p>

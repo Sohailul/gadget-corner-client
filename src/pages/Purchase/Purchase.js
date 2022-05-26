@@ -11,7 +11,7 @@ const Purchase = () => {
     const [tools, setTools] = useState({});
 
     useEffect(() => {
-        fetch(`http://localhost:5000/tool/${id}`)
+        fetch(`https://afternoon-journey-91609.herokuapp.com/tool/${id}`)
             .then(res => res.json())
             .then(data => setTools(data))
     }, [])
@@ -31,7 +31,7 @@ const Purchase = () => {
 
         if (min_order_quantity >= tools.min_order_quantity && min_order_quantity <= tools.available_quantity) {
 
-            const url = `http://localhost:5000/order`;
+            const url = `https://afternoon-journey-91609.herokuapp.com/order`;
             fetch(url, {
                 method: 'POST',
                 body: JSON.stringify(purchase),

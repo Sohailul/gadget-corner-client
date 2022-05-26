@@ -1,7 +1,7 @@
 import { CardElement, useElements, useStripe } from '@stripe/react-stripe-js';
 import React, { useEffect, useState } from 'react';
 
-const CheckoutForm = ({tool}) => {
+const CheckoutForm = ({ tool }) => {
     const stripe = useStripe();
     const elements = useElements();
     const [cardError, setCardError] = useState('');
@@ -10,10 +10,10 @@ const CheckoutForm = ({tool}) => {
     const [transactionId, setTransactionId] = useState('');
     const [clientSecret, setClientSecret] = useState('');
 
-    const {_id, price, name, email} = tool;
+    const { _id, price, name, email } = tool;
 
     useEffect(() => {
-        fetch('http://localhost:5000/create-payment-intent', {
+        fetch('https://afternoon-journey-91609.herokuapp.com/create-payment-intent', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -79,18 +79,18 @@ const CheckoutForm = ({tool}) => {
             appointment: _id,
             transactionId: paymentIntent.id
         }
-        fetch(`http://localhost:5000/order/${_id}`, {
+        fetch(`https://afternoon-journey-91609.herokuapp.com/order/${_id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',
                 'authorization': `Bearer ${localStorage.getItem('accessToken')}`
             },
             body: JSON.stringify(payment)
-        }).then(res=>res.json())
-        .then(data => {
-            setProcessing(false);
-            console.log(data);
-        })
+        }).then(res => res.json())
+            .then(data => {
+                setProcessing(false);
+                console.log(data);
+            })
 
     }
     return (

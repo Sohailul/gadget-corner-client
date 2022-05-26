@@ -11,7 +11,7 @@ const MyOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/order?email=${user.email}`, {
+            fetch(`https://afternoon-journey-91609.herokuapp.com/order?email=${user.email}`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -36,7 +36,7 @@ const MyOrders = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://afternoon-journey-91609.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

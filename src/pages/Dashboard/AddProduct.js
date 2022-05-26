@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
 
-    const { data: tools, isLoading } = useQuery('tools', () => fetch('http://localhost:5000/tool').then(res => res.json()))
+    const { data: tools, isLoading } = useQuery('tools', () => fetch('https://afternoon-journey-91609.herokuapp.com/tool').then(res => res.json()))
 
     const imageStorageKey = '6f4880c6859553e110b5fdbfd3a8489e';
 
@@ -41,7 +41,7 @@ const AddProduct = () => {
                         img: img
                     }
                     // send to your database 
-                    fetch('http://localhost:5000/tool', {
+                    fetch('https://afternoon-journey-91609.herokuapp.com/tool', {
                         method: 'POST',
                         headers: {
                             'content-type': 'application/json',

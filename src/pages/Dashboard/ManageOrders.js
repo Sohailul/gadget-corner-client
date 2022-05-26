@@ -8,7 +8,7 @@ const ManageOrders = () => {
 
     useEffect(() => {
         if (user) {
-            fetch(`http://localhost:5000/orders`, {
+            fetch(`https://afternoon-journey-91609.herokuapp.com/orders`, {
                 method: 'GET',
                 headers: {
                     'authorization': `Bearer ${localStorage.getItem('accessToken')}`
@@ -23,7 +23,7 @@ const ManageOrders = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `http://localhost:5000/order/${id}`;
+            const url = `https://afternoon-journey-91609.herokuapp.com/order/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

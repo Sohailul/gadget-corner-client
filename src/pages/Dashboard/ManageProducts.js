@@ -4,7 +4,7 @@ import { BsFillTrashFill } from 'react-icons/bs';
 const ManageProducts = () => {
     const [tools, setTools] = useState([]);
     useEffect(() => {
-        fetch('http://localhost:5000/tool')
+        fetch('https://afternoon-journey-91609.herokuapp.com/tool')
             .then(res => res.json())
             .then(data => setTools(data))
     }, [])
@@ -13,7 +13,7 @@ const ManageProducts = () => {
         const proceed = window.confirm('Are you sure?');
 
         if (proceed) {
-            const url = `http://localhost:5000/tool/${id}`;
+            const url = `https://afternoon-journey-91609.herokuapp.com/tool/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
